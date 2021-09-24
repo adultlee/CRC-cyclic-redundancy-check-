@@ -3,11 +3,11 @@
 
 using namespace std;
 int inputArr[14]; // 14의 크기를 가진 배열로 초기 입력되는 수이다. 
-int testArr[17]; //17의 크기(14+3)를 가진 crc 결과가 더해져 만들어질 배열이다.
+int testArr[17]; //입력을 통해 테스트할 배열이다.
 int tempArr[17]; // 중간 계산과정에 있어서 crc도출해 내기 위한 배열이다.
 int crc[3]; // 3의 크기를 가진 crc 결과이다. 초기에는 0으로 초기화 되어있다. 
-int test_crc[3]; // test 하여 들어가게 될  crc  값이다. 
-int divisor[4];
+int test_crc[3]; // test 하여 들어가게 될  crc 값이다. 
+int divisor[4]; //제수 (divisor)에 해당하는 값이다.
 
 void div()
 {
@@ -20,41 +20,27 @@ void div()
         {
             //가장 첫위치
             if (tempArr[i] == divisor[0])
-            {
-                tempArr[i] = 0;
-            }
+            tempArr[i] = 0;
             else
-            {
-                tempArr[i] = 1;
-            }
+            tempArr[i] = 1;
+
             //두번째 위치
             if (tempArr[i + 1] == divisor[1])
-            {
-                tempArr[i + 1] = 0;
-            }
+            tempArr[i + 1] = 0;
             else
-            {
-                tempArr[i + 1] = 1;
-            }
+            tempArr[i + 1] = 1;
 
             //3번째 위치
             if (tempArr[i + 2] == divisor[2])
-            {
                 tempArr[i + 2] = 0;
-            }
+            
             else
-            {
                 tempArr[i + 2] = 1;
-            }
             //4번째 위치
             if (tempArr[i + 3] == divisor[3])
-            {
                 tempArr[i + 3] = 0;
-            }
             else
-            {
                 tempArr[i + 3] = 1;
-            }
 
             for (int j = 0; j < 17; j++)
             {
